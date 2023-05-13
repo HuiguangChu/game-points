@@ -1,0 +1,21 @@
+.button {
+  padding: 0.8rem;
+  appearance: none;
+  background: none;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+
+  &.primary {
+    background: cornflowerblue;
+  }
+
+  &.secondary {
+    background: aquamarine;
+  }
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}

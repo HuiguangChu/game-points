@@ -1,7 +1,12 @@
-@import '../../styleMinxin.scss';
+@import '../../styleMinxin';
 
-.playerBoard {
+.playerBoard{
   @include flexBox($direction: $column, $basis: 58%);
+  @include breakpoint(768px) {
+    @include flexBox($basis: 100%);
+
+    margin-bottom: 1rem;
+  };
 
   box-shadow: 0 0 5px 2px rgba(0,0,0,0.2);
 

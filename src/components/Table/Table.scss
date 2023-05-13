@@ -1,0 +1,23 @@
+.table {
+  width: 100%;
+
+  td,
+  th {
+    padding: 1rem;
+    border-bottom: 1px solid #efefef;
+  }
+
+  &.fixed {
+    table-layout: fixed;
+  }
+
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+  &.left {
+    text-align: left;
+  }
+}

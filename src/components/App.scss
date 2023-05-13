@@ -17,7 +17,7 @@
   @include flexBox($wrap: $flexWrap, $justifyContent: $spaceBetween );
 
   @include breakpoint(768px) {
-    display: block;
+    @include flexBox($direction: $column, $wrap: nowrap);
   };
 
   height: 100vh;
