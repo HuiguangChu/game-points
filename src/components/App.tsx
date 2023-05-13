@@ -1,10 +1,11 @@
-import React, { memo } from 'react';
+import React, { FC, memo } from 'react';
 import styles from './App.scss';
+import PlayerBoard from '../views/playerBoard/PlayerBoard';
 
-const App = memo(() => {
+const App: FC = memo(() => {
     return (
         <div className={styles.appWrapper}>
-            start of project
+            <PlayerBoard />
         </div>
     );
 });

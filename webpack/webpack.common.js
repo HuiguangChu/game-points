@@ -34,20 +34,21 @@ module.exports = {
                 loader: 'ignore-loader',
                 include: [
                     path.resolve('./src'),
-                    path.resolve(__dirname, '../../../common'),
                 ],
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
                 include: [
-                    path.resolve('./src/components')
+                    path.resolve('./src/components'),
+                    path.resolve('./src/views')
                 ]
             },
             {
                 test: /\.scss$/,
                 include: [
-                    path.resolve('./src/components')
+                    path.resolve('./src/components'),
+                    path.resolve('./src/views')
                 ],
                 use: [
                     'style-loader', // creates style nodes from JS strings
@@ -79,7 +80,6 @@ module.exports = {
                 test: /(?<!\.d)\.tsx?$/,
                 loader: 'ts-loader',
                 include: [
-                    path.resolve(__dirname, '../../../common'),
                     path.resolve('./src'),
                 ],
                 options: {
