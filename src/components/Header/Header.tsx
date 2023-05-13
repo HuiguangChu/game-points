@@ -7,7 +7,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = memo(({ titleCaption }: HeaderProps) => {
     return (
-        <h4 className={styles.header}>
+        <h4 className={styles.headerWrapper}>
             {titleCaption}
         </h4>
     );

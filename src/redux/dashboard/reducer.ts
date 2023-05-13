@@ -6,11 +6,11 @@ export interface DashboardState {
 }
 
 export type ItemsCollection = {
-   [key in ItemType]: number;
+   [key in ItemType]?: number;
 }
 
-const initialState: DashboardState = {
-    itemsCollection: {} as ItemsCollection,
+export const initialState: DashboardState = {
+    itemsCollection: {},
 };
 
 export const dashboardReducer = (state: DashboardState = initialState, action: DashboardAction): DashboardState => {

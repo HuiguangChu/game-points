@@ -7,8 +7,10 @@ points awarded to a player for a number of items they have collected in a game.
 ## Project main structure
 ```
    src/
-     components-> UI components and styles
-     redux-> store, reuducers
+     components: UI components and styles
+     views: Main UI on screen
+     redux: store, reuducers
+     services: utililties, such as calcuation for points
    webpack: Bunlding scripts for local and production 
    .eslintrc-> Eslint config file
    .nvmrc-> Node version defination
@@ -34,7 +36,6 @@ Main Frameworks/Libraries used:
 * Unit/Integration test:
     * [jest](https://jestjs.io/)
     * [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/): lib for react component test
-    * [react-native-testing-library](https://callstack.github.io/react-native-testing-library/): lib for reactive native component test
 
 * Bundling:
     * [Webpack](https://webpack.js.org/): static module bundler for web

@@ -4,4 +4,8 @@ module.exports = {
     moduleFileExtensions: ['js', 'ts', 'tsx'],
     testMatch: ['<rootDir>/**/*.(spec|test).(ts|tsx|js)'],
     preset: 'ts-jest',
+    moduleNameMapper: {
+        '\\.(css|scss)$': 'identity-obj-proxy',
+    },
+    testEnvironment: "jsdom"
 };

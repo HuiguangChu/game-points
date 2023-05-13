@@ -10,13 +10,12 @@ const PlayerBoard: FC = memo(() => {
 
     const onkeydown = (event: KeyboardEvent): void => {
         // Enter key code
-        if (event.code === 'Enter') {
-            if (event.currentTarget) {
-                const targetValue: ItemType = event.currentTarget.getAttribute('data-value') as ItemType;
-                dispatch(onItemClick(targetValue));
-            }
+        if (event.code === 'Enter' && event.currentTarget) {
+            const targetValue: ItemType = event.currentTarget.getAttribute('data-value') as ItemType;
+            dispatch(onItemClick(targetValue));
         }
     };
+
     const renderItems = () => Object.keys(itemsDefinition).map((key: ItemType) => {
         const handleOnItemClick = () => dispatch(onItemClick(key));
 

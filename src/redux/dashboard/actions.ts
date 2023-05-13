@@ -2,8 +2,8 @@ import { action } from 'typesafe-actions';
 import { ItemType } from '../../services/pointsService';
 
 export enum ActionTypes {
-    ON_ITEM_CLICK = 'appRoot/ON_ITEM_CLICK',
-    RESTART_GAME = 'appRoot/RESTART_GAME',
+    ON_ITEM_CLICK = 'dashboard/ON_ITEM_CLICK',
+    RESTART_GAME = 'dashboard/RESTART_GAME',
 }
 
 export type DashboardAction = OnItemClickAction | RestartGameAction;
@@ -14,6 +14,7 @@ interface OnItemClickAction {
         item: ItemType
     }
 }
+
 interface RestartGameAction {
     type: ActionTypes.RESTART_GAME;
 }

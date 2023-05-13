@@ -6,6 +6,7 @@ export enum ItemType {
     C ='C',
     D ='D',
 }
+
 export const itemsDefinition: {[key in ItemType]: Item} = {
     [ItemType.A]: {
         unitPoints: 50,
@@ -24,6 +25,7 @@ export const itemsDefinition: {[key in ItemType]: Item} = {
         unitPoints: 15,
     },
 };
+
 export interface Item {
     unitPoints: number;
     specialBonus?: number;
@@ -43,6 +45,7 @@ export const calculatePointsForEachItem = (itemQuantity: number, itemType: ItemT
     }
     return itemQuantity * unitPoints;
 };
+
 export const calculateTotalPoints = (itemsCollection: ItemsCollection): number => {
     let totalScore = 0;
 
@@ -53,7 +56,7 @@ export const calculateTotalPoints = (itemsCollection: ItemsCollection): number =
     return totalScore;
 };
 
-const calculateTotalScoreWithoutBonus = (itemsCollection: ItemsCollection): number => {
+export const calculateTotalScoreWithoutBonus = (itemsCollection: ItemsCollection): number => {
     let totalWithoutBonus = 0;
 
     Object.keys(itemsCollection).forEach((key: ItemType): void => {

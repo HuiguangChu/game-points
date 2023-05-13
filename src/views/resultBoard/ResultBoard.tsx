@@ -17,7 +17,27 @@ const ResultBoard: FC = memo(() => {
     const { itemsCollection } = useSelector((state: AppRootState) => state.dashboard);
     const dispatch = useDispatch();
     const onRestartGame = () => dispatch(restartGame());
-
+    const headerRows: React.ReactNode = (
+        <tr>
+            {
+                ['Item', 'Qty', 'Score'].map((el: string) => <th key={el}>{el}</th>)
+            }
+        </tr>
+    );
+    const footerRows: React.ReactNode = (
+        <Fragment>
+            <tr>
+                <th>Bonuses</th>
+                <th>{}</th>
+                <th>{calculateBonuses(itemsCollection)}</th>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <th>{}</th>
+                <th>{calculateTotalPoints(itemsCollection)}</th>
+            </tr>
+        </Fragment>
+    );
     const renderTable = () => {
         const bodyRows: React.ReactNode = itemsCollection && Object.keys(itemsCollection).map((itemKey: ItemType) => {
             return (
@@ -29,27 +49,6 @@ const ResultBoard: FC = memo(() => {
             );
         });
 
-        const headerRows: React.ReactNode = (
-            <tr>
-                {
-                    ['Item', 'Qty', 'Score'].map((el: string) => <th key={el}>{el}</th>)
-                }
-            </tr>
-        );
-        const footerRows: React.ReactNode = (
-            <Fragment>
-                <tr>
-                    <th>Bonuses</th>
-                    <th>{}</th>
-                    <th>{calculateBonuses(itemsCollection)}</th>
-                </tr>
-                <tr>
-                    <th>Total</th>
-                    <th>{}</th>
-                    <th>{calculateTotalPoints(itemsCollection)}</th>
-                </tr>
-            </Fragment>
-        );
         return (
             <Table
                 fixed
