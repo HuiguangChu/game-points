@@ -5,6 +5,7 @@ export enum ItemType {
     B ='B',
     C ='C',
     D ='D',
+    E = 'E',
 }
 
 export const itemsDefinition: {[key in ItemType]: Item} = {
@@ -23,6 +24,9 @@ export const itemsDefinition: {[key in ItemType]: Item} = {
     },
     [ItemType.D]: {
         unitPoints: 15,
+    },
+    [ItemType.E]: {
+        unitPoints: 0,
     },
 };
 

@@ -4,7 +4,7 @@
 A simple browser based game points system that calculates the total
 points awarded to a player for a number of items they have collected in a game.
 
-## Project main structure
+## Architecture
 ```
    src/
      components: UI components and styles
@@ -20,6 +20,43 @@ points awarded to a player for a number of items they have collected in a game.
    .tesoconfig.test.json -> Configuration for jest test with typescript
    .husky -> Git hooks
 ```
+
+### Higher-Order Components
+* **ErrorBoundaryHoc:** simple HOC to show error message, has default error message,
+  but can be a customized message or component
+
+  ```
+    <ErrorBoundaryHoc>
+      <ExampleComponent />
+    </ErrorBoundaryHoc>
+
+    ```
+
+
+### Mixins for flexBox and breakpoints
+* **flexBox** mixin: \
+  Flexbox makes responsive development easier,
+  but it would be annoying to repeat same style for different elements.
+  Therefore, a flexBox mixin was created,it can be used like this in a scss class :
+    ```
+    .example {
+       @include flexBox($alignItems: $center, $justifyContent: $center);
+    } 
+
+    ```
+  `$alignItems` and `$justifyContent` are params for mixin function `flexBox`,
+  there are more supported params, you can check in `stylesMixin.scss` file. \
+  `$center` is a constant value defined in `stylesMixin.scss` file.
+
+* **breakpoint** mixin: \
+  you can use like this:
+    ```
+    .example {
+        @include breakpoint(980) {
+        // override some style
+        }
+    }
+    ```
 
 ## Development
 Main Frameworks/Libraries used:
