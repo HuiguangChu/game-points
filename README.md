@@ -57,6 +57,13 @@ points awarded to a player for a number of items they have collected in a game.
         }
     }
     ```
+  
+### Git hooks
+
+Made by [husky](https://typicode.github.io/husky/#/)
+* `pre-push`:
+  * `yarn lint`
+  * `yarn test`
 
 ## Development
 Main Frameworks/Libraries used:
@@ -81,9 +88,10 @@ Main Frameworks/Libraries used:
   
 ### Debugging
 
-**First of all** Make sure you have node version being used correctly(specified in *.nvmrc*),
-you can do manually or by run `nvm install`(If you don't have nvm, suggest to install [nvm](https://github.com/nvm-sh/nvm))
+**First of all**, make sure node version specified in *.nvmrc* is installed.
+You can do manually or by run `nvm install`(If you don't have nvm, suggest to install [nvm](https://github.com/nvm-sh/nvm))
 
+* `nvm use` -> Use the node version specified in *.nvmrc*
 * `yarn install` -> install the dependencies for all workspace
 
 In the project directory, you can run:
@@ -104,4 +112,14 @@ you can define in file `webpack.bundle-analyzer.js` with `analyzerPort`
 
 ## Learn More
 * How to create react app: [https://facebook.github.io/create-react-app/docs/getting-started](https://facebook.github.io/create-react-app/docs/getting-started).
+
+
+## What could be improved?
+
+* UI improvement. For example: font family, size, theme, and so on.
+* Write more tests, currently just demonstrated some for pointService, dashboardReducer and App component.
+* Localization: [react-i18next](https://react.i18next.com/) can be one of the options
+* Error tracking/analyzing, for example [track.js](https://trackjs.com/)
+* Take care more about accessibility and usability.
+  * Check accessibility locally and online(https://www.accessibilitychecker.org/) and improve
 
